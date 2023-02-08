@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* .myBtn  span {
+      width: 100%;
+}
+.myBtn  span .p-inputtext {
+    width: 50%;
+}
+  
+   */

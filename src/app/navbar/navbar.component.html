@@ -1,0 +1,21 @@
+  <div class="bg-blue-500 w-full h-12 flex justify-end">
+    <div class="w-full flex justify-end">
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Primary"
+        class="p-button-outlined  pr-28  p-button-rounded"
+        (click)="onOpenCart()"
+      >
+      
+      <i class="fa fa-cart-arrow-down fa-2x m-2" pBadge value="{{length}}"  severity="danger" aria-hidden="true">
+        
+        <!-- <p-badge value="2" styleClass="mr-2"></p-badge> -->
+      </i>
+    </button>
+    </div>
+  </div>
+  <app-cart [showCart]="showCart" (dataEvent)="onDataReceived($event)"></app-cart>
+
+

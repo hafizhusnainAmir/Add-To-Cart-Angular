@@ -1,0 +1,19 @@
+::ng-deep .p-sidebar-right {
+  top: unset !important;
+}
+::ng-deep .p-inputtext {
+  padding: 3px;
+
+}
+
+::ng-deep .myBtn {
+  span {
+    width: 100%;
+    .p-inputtext {
+      width: 50%;
+    }
+  }
+}
+::ng-deep .p-inputnumber{
+  padding: 8px;
+}

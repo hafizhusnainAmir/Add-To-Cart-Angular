@@ -1,0 +1,44 @@
+<div class="flex flex-wrap">
+  <div class="p-7 flex" *ngFor="let productInfo of productdata; index as i">
+    <div class="max-w-sm rounded w-96 overflow-hidden shadow-lg">
+      <div class="flex justify-center">
+        <img
+          class="h-60"
+          src="{{ productInfo.img }}"
+          alt="Sunset in the mountains"
+        />
+      </div>
+
+      <div class="flex justify-between px-8">
+        <p class="font-bold">{{ productInfo.name }}</p>
+
+        <p class="font-bold">{{ productInfo.price }} Rs</p>
+      </div>
+
+      <div class="px-6 py-4 flex justify-center">
+        <p-inputNumber
+          *ngIf="productInfo.selectedQuantity > 0"
+          [(ngModel)]="productInfo.selectedQuantity"
+          [showButtons]="true"
+          buttonLayout="horizontal"
+          inputId="horizontal"
+          spinnerMode="horizontal"
+          [step]="1"
+          decrementButtonClass="p-button-danger"
+          incrementButtonClass="p-button-success"
+          incrementButtonIcon="pi pi-plus"
+          decrementButtonIcon="pi pi-minus"
+          (onInput)="onInputQuantity(productInfo, $event)"
+        >
+        </p-inputNumber>
+        <button
+          *ngIf="productInfo.selectedQuantity == 0"
+          class="w-full bg-blue-500 rounded-sm h-10 font-semibold"
+          (click)="onAddToCart(productInfo.id)"
+        >
+          ADD TO CART
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

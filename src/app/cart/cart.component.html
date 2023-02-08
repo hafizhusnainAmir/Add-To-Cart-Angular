@@ -1,0 +1,47 @@
+<p-sidebar [(visible)]="showCart" (onHide)="onCloseCart()" [modal]="true" [blockScroll]="true" position="right">
+    <div class="flex" *ngFor="let data of getData; index as i">
+        <div class="max-w-sm rounded w-full overflow-hidden shadow-md mb-3">
+            <div class="justify-between px-8 m-1">
+                <p class="font-bold">{{data.name}}</p>
+        <div class="flex justify-between">
+
+            <p class="font-bold">{{data.price}}</p>
+            
+            <p class="flex justify-end">{{getTotalPrice(data)}}</p>
+            
+        </div>
+                
+              </div>
+
+
+              <div class="px-6 myBtn flex justify-center">
+                <p-inputNumber
+                 
+                  [showButtons]="true"
+                  buttonLayout="horizontal"
+                  inputId="horizontal"
+                  spinnerMode="horizontal"
+                  [step]="1"
+                  decrementButtonClass="p-button-danger"
+                  incrementButtonClass="p-button-success"
+                  incrementButtonIcon="pi pi-plus"
+                  decrementButtonIcon="pi pi-minus"
+                  [(ngModel)]="data.selectedQuantity"
+                  (onInput)="onInputQuantity(data, $event)"
+
+                  
+                >
+                </p-inputNumber>
+                
+              </div>
+        
+        </div>
+      
+    </div>
+    <div>
+        <p>{{grandTotalPrice()}}</p>
+    </div>
+   
+   
+</p-sidebar>
+
